@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="dario"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-02-08 10:06:49 "/>
+        <attribute name="created" value="ZGFyaW87V0lOMTE7MjAyNC0wMi0wODsiMDk6NTk6MTUgIjsyMDY1"/>
+        <attribute name="edited" value="ZGFyaW87V0lOMTE7MjAyNC0wMi0wODsiMTA6MDY6NDkgIjsxOzIxNjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="6"/>
+            <declare name="iterazione" type="Integer" array="False" size=""/>
+            <for variable="iterazione" start="1" end="n" direction="inc" step="1">
+                <turn expression="360/n" rotate="right"/>
+                <forward expression="100" pen="down"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
