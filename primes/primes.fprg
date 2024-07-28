@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="dario"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-07-28 11:58:04 "/>
+        <attribute name="created" value="ZGFyaW87V0lOMTE7MjAyNC0wNy0yODsiMTE6NDI6MzEgIjsyMDU1"/>
+        <attribute name="edited" value="ZGFyaW87V0lOMTE7MjAyNC0wNy0yODsiMTE6NTg6MDQgIjs0OzIxNzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="tests()"/>
+        </body>
+    </function>
+    <function name="decompose" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="n" newline="True"/>
+            <declare name="divisor" type="Integer" array="False" size=""/>
+            <assign variable="divisor" expression="2"/>
+            <while expression="divisor &lt;= n">
+                <while expression="n % divisor == 0">
+                    <assign variable="n" expression="n / divisor"/>
+                    <output expression="&quot;divisor: &quot;" newline="False"/>
+                    <output expression="divisor" newline="True"/>
+                </while>
+                <assign variable="divisor" expression="divisor+1"/>
+            </while>
+        </body>
+    </function>
+    <function name="tests" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;testing primes algorithm&quot;" newline="True"/>
+            <call expression="decompose(12)"/>
+        </body>
+    </function>
+</flowgorithm>
