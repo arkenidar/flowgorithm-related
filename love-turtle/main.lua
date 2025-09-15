@@ -48,7 +48,7 @@ local function start_demo()
     end
 
     -- start a new demo coroutine
-    local demo = require 'demo2'
+    local demo = require 'demo0'
     demo_co = coroutine.create(demo)
     demo_status = 'running'
     if DEBUG then print('[debug] starting demo coroutine') end
