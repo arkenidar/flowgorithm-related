@@ -17,6 +17,10 @@ Controls:
 
 - Click or press any key to resume when `wait()` is called with no arguments.
 
+Window and scaling:
+
+- The window is resizable. The turtle content auto-scales to fit within the window (with padding) both when shrinking and enlarging.
+
 Notes and limitations:
 
 - This is a small demo implementation and doesn't replicate all features of the original `turtle` (wx-based) module.

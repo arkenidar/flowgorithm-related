@@ -23,6 +23,13 @@ local slider = {
 -- animation UI state
 local anim_button = { x = 560, y = 8, w = 120, h = 28 }
 
+-- simple layout helper: anchor animation button to right edge with margin
+local function layoutUI()
+    local ww = love.graphics.getWidth()
+    anim_button.x = ww - (anim_button.w + 8)
+    anim_button.y = 8
+end
+
 local function start_demo()
     -- If there's an existing demo coroutine, behave sensibly:
     --  - if it's suspended, resume it (Run acts like resume)
@@ -67,8 +74,15 @@ end
 
 function love.load()
     love.window.setTitle('Love Turtle LOGO Demo')
-    love.window.setMode(800, 600)
+    -- enable resizable window so the canvas can scale to fit
+    love.window.setMode(800, 600, { resizable = true, minwidth = 480, minheight = 360 })
+    layoutUI()
     start_demo()
+end
+
+-- keep UI anchored when the window is resized
+function love.resize(w, h)
+    layoutUI()
 end
 
 function love.update(dt)

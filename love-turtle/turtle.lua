@@ -524,7 +524,8 @@ function M.draw()
     local pad = 0.9
     local sx = (win_w * pad) / content_w
     local sy = (win_h * pad) / content_h
-    local scale = math.min(sx, sy, 1) -- don't upscale beyond 1
+    -- scale to fit window with padding; allow upscaling for small content
+    local scale = math.min(sx, sy)
 
     -- translate to screen center, scale, then translate content center to origin
     local cx = (minx + maxx) / 2
@@ -584,7 +585,7 @@ function M.draw()
             local pad = 0.9
             local sx = (win_w * pad) / content_w
             local sy = (win_h * pad) / content_h
-            local scale = math.min(sx, sy, 1)
+            local scale = math.min(sx, sy)
             local cx = (minx + maxx) / 2
             local cy = (miny + maxy) / 2
             -- compute animated position (use anim_prev if active, otherwise turtle coords)
@@ -650,7 +651,7 @@ function M.draw()
             local pad = 0.9
             local sx = (win_w * pad) / content_w
             local sy = (win_h * pad) / content_h
-            local scale = math.min(sx, sy, 1)
+            local scale = math.min(sx, sy)
             local cx = (minx + maxx) / 2
             local cy = (miny + maxy) / 2
 
@@ -696,7 +697,7 @@ function M.draw()
         local pad = 0.9
         local sx = (win_w * pad) / content_w
         local sy = (win_h * pad) / content_h
-        local scale = math.min(sx, sy, 1)
+        local scale = math.min(sx, sy)
         local cx = (minx + maxx) / 2
         local cy = (miny + maxy) / 2
         local screen_tx = win_w / 2 + (t.x - cx) * scale
